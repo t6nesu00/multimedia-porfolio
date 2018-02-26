@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<script src="storage.js"></script>
+
+<title>MyPortfolio</title>
+</head>
+<body>
+<div class="main">
+	<div class="heading">
+		<div id="links">
+			<button class="button button1">
+				<a href="index.html">HOME</a>
+			</button>
+			<button class="button button2">
+				<a href="labs.html">LABS</a>
+			</button>
+			<button class="button button3">
+				<a href="about.html">ABOUT</a>
+			</button>
+		</div>
+	</div>
+	<div class="content">
+		<h1>1. Web Sockets:</h1>
+		<p>Web Socket is an advanced technology that enables to open an interactive communication session between the server and user's broswers.</p>
+		<h1><a href="websocket.html">Web Chat Client link</a></h1>
+
+		<h1>3.Audio</h1>
+		<audio id="audioPlayer">
+			<source src="Evelina_kylmii.mp3" type="audio/mp3">
+		</audio>
+  	<div>
+		<button onclick="toggleAudio()" id="playPause">Play</button>
+		<button onclick="document.getElementById('audioPlayer').volume += 0.2">Vol+ </button> 
+	  	<button onclick="document.getElementById('audioPlayer').volume -= 0.2">Vol- </button>
+  	</div>
+<h1>4.Video file</h1>
+	<video width="85%" height="auto" id="videoPlayer">
+	<source src="evelina_kylmii.mp4" type="video/mp4">
+	</video>
+  <div>
+	<button onclick="toggleVideo()" id="videoControl">Play</button>
+	<button onclick="goFullscreen('player'); return false">Fullscreen</button>
+	<!--button onclick="document.getElementById('videoPlayer').pause()">Pause</button-->
+  </div>
+		
+	</div>
+	
+</div>
+</body>
+</html>
+<!--Created by Suman Nepali 2018 -->

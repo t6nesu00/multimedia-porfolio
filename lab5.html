@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>MyPortfolio</title>
+
+    <script>
+       function jsonCallback(json){
+	   console.log(json);
+	   $("button").click(function(){
+       $(document).ready(function () {
+       var tr;
+       for (var i = 0; i < json.length; i++) {
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].name + "</td>");
+            tr.append("<td><a href=mailto:" + json[i].email + ">" + json[i].email  + "</a></td>");
+            $('table').append(tr);
+            }
+        });
+      });
+    };
+
+    $.ajax({
+      url: "https://imp-portfolio-demonstration.herokuapp.com/json/persons.jsonp",
+      dataType: "jsonp"
+    });
+    </script>
+
+</head>
+<body>
+<div class="main">
+	<div class="heading">
+		<div id="links">
+			<button class="button button1">
+				<a href="index.html">HOME</a>
+			</button>
+			<button class="button button2">
+				<a href="labs.html">LABS</a>
+			</button>
+			<button class="button button3">
+				<a href="about.html">ABOUT</a>
+			</button>
+		</div>
+	</div>
+	<div class="content">
+		<h1>jQuery</h1>
+		<div>
+			<p>jQuery is a Javascript library which makes easier to use Javascript on a website. It is used to make highly interactive web applications. </p>
+			<p>As a web developer, jquery being most popular and most extendable Javascript framework it makes easy to add animations and events. This saves the time. I think jQuery can be used to add some animations in case of our previous participant list.</p>
+			<p>CDN-Content Delivery Network is a system that delivers the pages and web content to the user, based on geographic location of the user. With the use of this system we can speed up in the delivery of content. The closer the server to user geopgraphically, the faster the content is delivered to user.</p>
+		</div>
+		
+	</div>
+	 
+	<div>
+		<h2>Person List</h2>
+		<button>Load with Ajax</button>
+		<table>
+			<tr>
+				<th>Person</th>
+				<th>email</th>
+			</tr>
+		</table>
+				
+	</div>
+</div>
+</body>
+</html>
+<!--Created by Suman Nepali 2018-->

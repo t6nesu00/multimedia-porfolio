@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+<title>MyPortfolio</title>
+</head>
+<body>
+<div class="main">
+	<div class="heading">
+		<div id="links">
+			<button class="button button1">
+				<a href="index.html">HOME</a>
+			</button>
+			<button class="button button2">
+				<a href="labs.html">LABS</a>
+			</button>
+			<button class="button button3">
+				<a href="about.html">ABOUT</a>
+		</div>
+	</div>
+	<div class="content" style="padding:0 16px;">
+		<h1>1. Definitions</h1>
+        <h2><a href="https://en.wikipedia.org/wiki/HTML" target="_blank"> HTML</a></h2>
+              <p>
+	Hyper Text Markup Language (HTML) is a coding language that is widely used to develope your web pages.
+	It is also called the building block of HTML pages. All the elemnts are represented by tags, such
+	"heading", "paragraph", "table" etc. The browser does not show the tags but use them to render the
+	content of the pages. The basic structure of HTML page be like this. <br>
+	<!-- Use this for greater or less than sign &lt;&gt; -->
+	&lt;!DOCTYPE html&gt;<br>
+	&lt;html&gt;<br>
+	&lt;head&gt;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;<br>
+	&lt;/head&gt;<br>
+	&lt;body&gt;<br><br>
+	&lt;/body&gt;<br>
+	&lt;/html&gt;<br>
+	</p>
+        <h2><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank"> CSS</a></h2>
+              <p>CSS stands for Cascading Style Sheets is web language that is used to 
+				add the styles on web pages. In a simple way it can be said that, CSS is 
+				a language that describes the styles of HTML document. For exmaple it can 
+				set the background color, font colors, fort family and sizes etc.</p>
+        <h2><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"> JavaScript</a></h2>
+              <p>Javascript oftne short form of JS is a hight level and dynamic programming language.
+			Along side HTML and CSS, Javascript is one of the three core of world wide web content
+			production. We can say HTML is to define the content of web pages and CSS is to specify
+			layout of the web pages, whereas, Javasript is to program the behaviour of the web pages.</p>
+        <h2><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP</a></h2>
+              <p>HTTP stands for Hyper-Text Transfer Protocol. It is a plain text protocol which is used to transfer HTML webpages. HTTP uses port 80 by default in TCP/IP connection. HTTP defines how messages
+			  are formatted and transmitted, and also what actions Web servers and browsers should take in response.</p>
+        <h2><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML5</a></h2>
+              <p>	The largest version of Hypertext Markup Language is HTML5. It does everything from animation to apps to
+		 	build incredibly complicated applications that run in your browser. It doses not require any additional
+			software such as broswer plugnis.</p>
+        <h2><a href="https://en.wikipedia.org/wiki/Dynamic_HTML" target="_blank"> Dynamic HTML</a></h2>
+              <p>Dynamic HTML is collection of Static languages such as HTML, CSS and JavaScript. With the proper combination of all those static languages, a dynamic webpage can be created. For example, with the help of javascript we can check inputs in a form without reloading the page and even without connecting to the server. This makes the user experience way easier. </p>
+      <h1>2. Coding Conventions</h1>
+          <p>Programs are made up with codes and these programs let us do the desired task with machine. The relation between code and programs are same as relation between human body and cells. We need clean and healthy cells for us to be healthy as a being in the same way programs need well structured and well organized lines of codes to be a solid program. This is where "Coding Convention comes in".Coding conventions are set of rules made for writing codes easier and understanding written codes convenient.<br>
+          Some very important reasons to follow coding conventions are:<br>
+          </p>
+      <ol>
+        <li><h3>Easy to understand</h3>
+          <p>They make written codes easy to understand even when we are skimming. Coding conventions make us write our codes structurally and with some pattern.</p>
+        </li>
+
+        <li>
+          <h3>Uniformity</h3>
+            <p>They give uniformity in structures. We use the same structure for same pattern. For example: if we     write functions like this:<br> function greet("name"){ <br>
+            document.write("Hello "+ name);<br>
+            } <br><br>
+            We always write functions like that throughout the code. Not writing like this in another page:<br>
+            function greet("name"){ document.write("Hello " + name);}<br>
+            But both are perfectly valid for machines.
+        </li>
+        <li>
+          <h3>Development and Maintenance</h3>
+          Nobody develops and maintains a huge code all alone. In order for the code to be easy to understand for other collaborators it is essential to use coding convention. In addition to that, when the code has to modified years later, use of coding convention makes it really easy. 
+        </li>
+      </ol> 
+
+    <h1>5. Dynamic HTML</h1>
+      <h1>Here you can write names using JavaScript</h1>
+      <form id="nameForm">
+		<label id="nameL">Name to add:</label>
+		<input type="text" name="Name" id="name">
+		<button type="button" onclick="add_person()">Add Person</button>
+	</form>
+        <p>Names: </p>
+    <p id="persons_name"></p>
+	</div>
+	<script type="text/javascript" src="lab1.js"></script>
+</body>
+</html>

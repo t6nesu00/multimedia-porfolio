@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="lab6.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<title>MyPortfolio</title>
+</head>
+<body>
+<div class="main">
+	<div class="heading">
+		<div id="links">
+			<button class="button button1">
+				<a href="index.html">HOME</a>
+			</button>
+			<button class="button button2">
+				<a href="labs.html">LABS</a>
+			</button>
+			<button class="button button3">
+				<a href="about.html">ABOUT</a>
+			</button>
+		</div>
+	</div>
+	<div class="content">
+		<h2>Search Images from Flickr</h2>
+		<input type="text" name="input" id="search">
+		<button id="btn" onclick="make_search()">Search</button>
+		<div id="images" class="container-fluid"></div>
+		 <script>
+   function make_search() {
+   var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+   var tag = document.getElementById('search').value;
+   $.getJSON( flickerAPI, {
+    tags: tag,
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 24 ) {
+          return false;
+        }
+      });
+    });
+    $("#images").empty();
+};
+  </script>
+	
+	</div>
+</div>
+</body>
+</html>
+<!--Created by Suman Nepali 2018-->

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Game</title>
+	<style type="text/css">
+		canvas{
+			border: 5px solid black;
+			background-size: 1000%;
+		}
+		#count{
+			font-size: 40px;
+		}
+		#miss{
+			font-size: 40px;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			canvas = document.getElementById("mycanvas");
+			context = canvas.getContext("2d");
+
+			//HERE WE CREATE A NEW ARRAY TO HOLD RECTANGLES
+			placeHolder = new Array();
+
+			//HERE ARE VARIABLES TO KEEP TRACK OF HITS AND MISSES
+
+			var hits = 0;
+			var misses = 0;
+
+			canvas.onmousedown = function(e){
+				var rect = canvas.getBoundingClientRect();
+				var x = e.clientX - rect.left;
+				var y = e.clientY - rect.top;
+
+				var i=placeHolder.length -1;
+				if(collision(placeHolder[i].x,placeHolder[i].y,40,40,x,y)){
+					hits = hits+1;
+					var s = document.getElementById("count").innerHTML = hits;
+				}
+				else{
+					misses = misses+1;
+					var m = document.getElementById("miss").innerHTML = misses;
+				}
+
+			}
+
+
+				function drawSquare(){
+					placeHolder = [];
+
+					var square = new Object();
+
+					square.x = Math.floor(Math.random() * 500-22.5);
+					square.y = Math.floor(Math.random() * 500-22.5);
+					context.clearRect(0,0, 500,500);
+					context.fillStyle = "red";
+					context.fillRect(square.x, square.y, 40,40);
+
+					placeHolder.push(square);
+				}
+
+				function collision(rectX, rectY, rectWidth, rectHeight, mouseX, mouseY){
+					if(((rectX <= mouseX) &&
+						(rectX+rectWidth >= mouseX)) &&
+						((rectY <=mouseY) &&
+							(rectY+rectHeight >= mouseY)))
+					{
+						return true;
+					}
+					else{
+						return false;
+					}
+				}
+
+				
+
+				setInterval(drawSquare,1000)
+
+					
+			}
+
+
+	</script>
+</head>
+<body bgcolor="lightblue">
+	<center>
+		<H1>Canvas square</H1>
+	</center>
+	<center>
+		<canvas id="mycanvas" width="500" height="500">
+			Canvas is not supported.
+		</canvas>
+	</center>
+	<p>Number of hits:</p>
+	<div id="count"></div>
+	<br>
+	<p>number of miss:</p>
+	<div id="miss"></div>
+</body>
+</html>
